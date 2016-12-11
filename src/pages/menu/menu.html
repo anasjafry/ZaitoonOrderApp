@@ -1,9 +1,77 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Order Now</ion-title>
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-segment>
+      <ion-segment-button value="starters">
+        Starters
+      </ion-segment-button>
+      <ion-segment-button value="veg_main">
+        Veg. Main Course
+      </ion-segment-button>
+      <ion-segment-button value="nonveg_main">
+        Non Veg. Main Course
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon ios="ios-options-outline" md="md-options"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-searchbar color="primary"
+                   placeholder="Search">
+    </ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>All Menu</h2>
+<ion-content>
+  <ion-list>
+
+    <ion-item-group>
+
+      <ion-item-divider sticky>
+        <ion-label>
+         Starters
+        </ion-label>
+      </ion-item-divider>
+
+      <ion-item-sliding>
+
+        <button ion-item>
+          <h3>Chicken Lollipop</h3>
+          <p>Rs.300
+          </p>
+        </button>
+
+      </ion-item-sliding>
+
+    </ion-item-group>
+
+    <ion-item-group>
+
+      <ion-item-divider sticky>
+        <ion-label>
+          Main Course
+        </ion-label>
+      </ion-item-divider>
+
+      <ion-item-sliding>
+
+        <button ion-item>
+          <h3>Poori Bhaji</h3>
+          <p>Rs.100
+          </p>
+        </button>
+
+      </ion-item-sliding>
+
+    </ion-item-group>    
+
+  </ion-list>
 </ion-content>

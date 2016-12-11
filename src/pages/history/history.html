@@ -1,17 +1,100 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar no-border-bottom>
     <ion-title>
-      History
+      Orders
     </ion-title>
   </ion-navbar>
+<ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="orders">
+      <ion-segment-button value="live">
+        Live
+      </ion-segment-button>
+      <ion-segment-button value="past">
+        Past
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-left></ion-icon>
-      Previous Orders
-    </ion-item>
-  </ion-list>
+  <div [ngSwitch]="orders">
+    <ion-list *ngSwitchCase="'live'">
+      <ion-item>
+      <ion-row>
+      <ion-col>
+      <h2>Marty McFly</h2>
+      </ion-col>
+      <ion-col right text-right>
+      <h2><i primary class="fa fa-inr"></i>250</h2>
+      </ion-col>
+      </ion-row>
+      <p>November 5, 1955</p>
+      <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+      <ion-row>
+        <ion-col>
+         <button ion-button icon-left clear small (click)="orderdetailsPage()">
+          <div>View Details</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small>
+          <div>Track Order</div>
+          </button>
+        </ion-col>
+      </ion-row>
+      </ion-item>
+      </ion-list>
+
+    <ion-list *ngSwitchCase="'past'">
+      <ion-item>
+      <ion-row>
+      <ion-col>
+      <h2>Marty McFly</h2>
+      </ion-col>
+      <ion-col right text-right>
+      <h2><i primary class="fa fa-inr"></i>250</h2>
+      </ion-col>
+      </ion-row>
+      <p>November 5, 1955</p>
+      <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+      <ion-row>
+        <ion-col>
+         <button ion-button icon-left clear small (click)="orderdetailsPage()">
+          <div>View Details</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small>
+          <div>Repeat Order</div>
+          </button>
+        </ion-col>
+      </ion-row>
+      </ion-item>
+      
+      <ion-item>
+      <ion-row>
+      <ion-col>
+      <h2>Marty McFly</h2>
+      </ion-col>
+      <ion-col right text-right>
+      <h2><i primary class="fa fa-inr"></i>250</h2>
+      </ion-col>
+      </ion-row>
+      <p>November 5, 1955</p>
+      <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+      <ion-row>
+        <ion-col>
+         <button ion-button icon-left clear small (click)="orderdetailsPage()">
+          <div>View Details</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small>
+          <div>Repeat Order</div>
+          </button>
+        </ion-col>
+      </ion-row>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>

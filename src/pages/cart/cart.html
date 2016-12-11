@@ -7,6 +7,89 @@
 </ion-header>
 
 <ion-content padding>
-<h1>Cart Page</h1>
-
+<ion-list>
+	<ion-item>
+	<ion-row>
+      <ion-col>
+      <ion-note>ITEM DETAILS</ion-note>
+      </ion-col>
+    </ion-row>
+    </ion-item>
+    <ion-item>
+    <ion-row>
+      <ion-col>
+      <p>Butter Chicken</p>
+      </ion-col>
+      <ion-col right text-right>
+      	<p><i primary class="fa fa-inr"></i>250</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+		<ion-col right text-right>
+			<p><ion-icon name="md-remove-circle"></ion-icon> 2 <ion-icon name="md-add-circle"></ion-icon></p>
+      	</ion-col>
+	</ion-row>
+    </ion-item>
+    <ion-item>
+    <ion-row>
+      <ion-col>
+      <p>Gobi 65</p>
+      </ion-col>
+      <ion-col right text-right>
+      <p><i primary class="fa fa-inr"></i>150</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+    	<ion-col right text-right>
+      		<p><ion-icon name="md-remove-circle"></ion-icon> 2 <ion-icon name="md-add-circle"></ion-icon></p>
+      	</ion-col>
+    </ion-row>
+    </ion-item>
+    <ion-item>
+    <ion-row>
+      <ion-col>
+      <p>Tax</p>
+      </ion-col>
+      <ion-col right text-right>
+      <p color="danger">+ <i primary class="fa fa-inr"></i>43.50</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+      <p>Discount</p>
+      </ion-col>
+      <ion-col right text-right>
+      <p color="secondary">- <i primary class="fa fa-inr"></i>0</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+      <p>Delivery Charges</p>
+      </ion-col>
+      <ion-col right text-right>
+      <p color="danger">+ <i primary class="fa fa-inr"></i>0</p>
+      </ion-col>
+    </ion-row>
+	</ion-item>
+	<ion-item right text-right>
+		<p>TOTAL : <i primary class="fa fa-inr"></i>293.50<p>
+	</ion-item>
+	<ion-item right text-right>
+		<button ion-button clear small (click)="doPrompt()">
+        <div>APPLY COUPON</div>
+      	</button>
+	</ion-item>
+</ion-list>
+<ion-card>
+	<ion-card-header>
+    Delivery Address
+  </ion-card-header>
+	<ion-card-content>
+		<p>S12 905, Smondoville-1, Neo Town, Electronic City Phase-1, Bengaluru.</p>
+	</ion-card-content>
+</ion-card>
+<ion-item>
+	<button ion-button block>CHECKOUT</button>	
+</ion-item>
 </ion-content>
+

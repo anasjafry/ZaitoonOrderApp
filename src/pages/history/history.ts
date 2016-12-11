@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { OrderdetailsPage } from './orderdetails/orderdetails';
 import { NavController } from 'ionic-angular';
+import { TrackPage } from './track/track';
 
 @Component({
   selector: 'page-history',
@@ -17,4 +18,7 @@ export class HistoryPage {
     this.navCtrl.push(OrderdetailsPage);
   }
 
+  trackPage() {
+  	this.navCtrl.push(TrackPage);
+  }
 }

@@ -7,6 +7,7 @@ import { MenuPage } from '../pages/menu/menu';
 import { AccountPage } from '../pages/account/account';
 import { TabsPage } from '../pages/tabs/tabs';
 import { OrderdetailsPage } from '../pages/history/orderdetails/orderdetails';
+import { TrackPage } from '../pages/history/track/track';
 import { AddressPage } from '../pages/account/address/address';
 
 @NgModule({
@@ -18,6 +19,7 @@ import { AddressPage } from '../pages/account/address/address';
     AccountPage,
     OrderdetailsPage,
     AddressPage,
+    TrackPage,
     TabsPage
   ],
   imports: [
@@ -32,6 +34,7 @@ import { AddressPage } from '../pages/account/address/address';
     AccountPage,
     OrderdetailsPage,
     AddressPage,
+    TrackPage,
     TabsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]

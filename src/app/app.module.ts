@@ -6,6 +6,8 @@ import { HistoryPage } from '../pages/history/history';
 import { MenuPage } from '../pages/menu/menu';
 import { AccountPage } from '../pages/account/account';
 import { TabsPage } from '../pages/tabs/tabs';
+import { OrderdetailsPage } from '../pages/history/orderdetails/orderdetails';
+import { AddressPage } from '../pages/account/address/address';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     HistoryPage,
     MenuPage,
     AccountPage,
+    OrderdetailsPage,
+    AddressPage,
     TabsPage
   ],
   imports: [
@@ -26,6 +30,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     HistoryPage,
     MenuPage,
     AccountPage,
+    OrderdetailsPage,
+    AddressPage,
     TabsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { AddressPage } from './address/address';
 import { NavController } from 'ionic-angular';
 
 @Component({
@@ -12,4 +12,8 @@ export class AccountPage {
 
   }
 
+  addressPage() {
+    console.log("Address Page Called");
+    this.navCtrl.push(AddressPage);
+  }
 }

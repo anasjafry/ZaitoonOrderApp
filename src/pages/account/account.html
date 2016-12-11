@@ -1,9 +1,22 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Account</ion-title>
+    <ion-title>
+      Account
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Home Page</h2>
+<ion-content>
+  <ion-item-group>
+    <ion-item-divider text-center color="light">
+    <h2>Anas Jafry</h2>
+    <p><i>anasrazak@gmail.com</i></p>
+    <p>+919884179675</p>
+	</ion-item-divider>
+    <a (click)="addressPage()"><ion-item><ion-icon name="md-home" item-left></ion-icon>Manage Addresses</ion-item></a>
+    <a><ion-item><ion-icon name="md-pricetags" item-left></ion-icon>Offers</ion-item></a>
+  </ion-item-group>
+  <ion-item-group center>
+	<button ion-button block>Logout</button>	
+	</ion-item-group>
 </ion-content>

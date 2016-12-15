@@ -15,22 +15,22 @@
       </ion-col>
     </ion-row>
     </ion-item>
-    <ion-item>
+    <ion-item *ngFor="let item of info">
     <ion-row>
       <ion-col>
-      <p>Butter Chicken</p>
+      <p>{{ item.itemName }}</p>
       </ion-col>
       <ion-col right text-right>
-      	<p><i primary class="fa fa-inr"></i>250</p>
+      	<p><i primary class="fa fa-inr"></i>{{ item.itemPrice }}</p>
       </ion-col>
     </ion-row>
     <ion-row>
-		<ion-col right text-right>
-			<p><ion-icon name="md-remove-circle"></ion-icon> 2 <ion-icon name="md-add-circle"></ion-icon></p>
-      	</ion-col>
-	</ion-row>
+		  <ion-col right text-right>
+			   <p><ion-icon name="md-remove-circle"></ion-icon> {{ item.itemQuantity }} <ion-icon name="md-add-circle"></ion-icon></p>
+      </ion-col>
+	  </ion-row>
     </ion-item>
-    <ion-item>
+    <!-- <ion-item>
     <ion-row>
       <ion-col>
       <p>Gobi 65</p>
@@ -44,7 +44,7 @@
       		<p><ion-icon name="md-remove-circle"></ion-icon> 2 <ion-icon name="md-add-circle"></ion-icon></p>
       	</ion-col>
     </ion-row>
-    </ion-item>
+    </ion-item> -->
     <ion-item>
     <ion-row>
       <ion-col>

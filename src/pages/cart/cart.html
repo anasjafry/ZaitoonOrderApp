@@ -26,7 +26,7 @@
     </ion-row>
     <ion-row>
 		  <ion-col right text-right>
-			   <p><ion-icon name="md-remove-circle"></ion-icon> {{ item.itemQuantity }} <ion-icon name="md-add-circle"></ion-icon></p>
+			   <p><ion-icon name="md-remove-circle" (click)="minusFunction(1001)"></ion-icon> {{ item.itemQuantity }} <ion-icon name="md-add-circle" (click)="addFunction(1001)"></ion-icon></p>
       </ion-col>
 	  </ion-row>
     </ion-item>
@@ -71,8 +71,8 @@
       </ion-col>
     </ion-row>
 	</ion-item>
-	<ion-item right text-right>
-		<p>TOTAL : <i primary class="fa fa-inr"></i>293.50<p>
+	<ion-item right text-right (click)="price()">
+		<p>TOTAL : <i primary class="fa fa-inr" ></i><p id="sum">{{ price }}</p><p>
 	</ion-item>
 	<ion-item right text-right>
 		<button ion-button clear small (click)="doPrompt()">
@@ -92,4 +92,3 @@
 	<button ion-button block>CHECKOUT</button>	
 </ion-item>
 </ion-content>
-

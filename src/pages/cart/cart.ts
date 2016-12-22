@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AlertController } from 'ionic-angular';
 import { NavController } from 'ionic-angular';
 
+
 var items = [];
 items.push({"itemCode":1001,"itemName":"Paneer Butter Masala","itemQuantity": 4,"itemPrice":90});
 items.push({"itemCode":1002,"itemName":"Channa Butter Masala","itemQuantity": 1,"itemPrice":70});
@@ -17,12 +18,12 @@ console.log();
   templateUrl: 'cart.html'
 })
 export class CartPage {
+
+  
   info = JSON.parse(localStorage.getItem("myCart"));
   constructor(public navCtrl: NavController,
-  public alertCtrl: AlertController
-  ) { this.price={
-    text: "1000"
-  } }
+  public alertCtrl: AlertController,
+  ) {  } 
 
   doPrompt() {
     //console.log((JSON.parse(localStorage.getItem("myCart")))[0]);
@@ -44,7 +45,7 @@ export class CartPage {
         {
           text: 'Save',
           handler: data => {
-            console.log('Saved clicked');
+            console.log('Save clicked');
           }
         }
       ]

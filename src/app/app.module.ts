@@ -10,6 +10,7 @@ import { OrderdetailsPage } from '../pages/history/orderdetails/orderdetails';
 import { TrackPage } from '../pages/history/track/track';
 import { AddressPage } from '../pages/account/address/address';
 import { OffersPage } from '../pages/account/offers/offers';
+import { SubmenuPage } from '../pages/menu/submenu/submenu';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { OffersPage } from '../pages/account/offers/offers';
     AddressPage,
     TrackPage,
     OffersPage,
-    TabsPage
+    TabsPage,
+    SubmenuPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -38,7 +40,8 @@ import { OffersPage } from '../pages/account/offers/offers';
     AddressPage,
     TrackPage,
     OffersPage,
-    TabsPage
+    TabsPage,
+    SubmenuPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

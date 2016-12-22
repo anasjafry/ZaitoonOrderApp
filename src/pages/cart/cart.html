@@ -5,8 +5,11 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
+<ion-content padding *ngIf='!flag'>
+  <h2>Empty Cart</h2>
+</ion-content>
 
-<ion-content padding>
+<ion-content padding *ngIf='flag'>
 <ion-list>
 	<ion-item>
 	<ion-row>

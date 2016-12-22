@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{ x.mainName }}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<ion-list *ngFor="let i of x.submenu">
+  <ion-item-group>
+
+      <ion-item-divider sticky>
+        <ion-label>
+          {{i.subName}}
+        </ion-label>
+      </ion-item-divider>
+
+      <ion-item-sliding *ngFor="let j of i.items">
+
+        <button ion-item>
+          <h3>{{j.itemName}}</h3>
+          <p><i primary class="fa fa-inr"></i>{{j.itemPrice}}</p>
+        </button>
+
+      </ion-item-sliding>
+
+    </ion-item-group>
+</ion-list>
+</ion-content>

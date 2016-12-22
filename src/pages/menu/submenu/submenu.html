@@ -18,7 +18,7 @@
 
       <ion-item-sliding *ngFor="let j of i.items">
 
-        <button ion-item>
+        <button ion-item (click)="addToCart(1000,'item',100,'type')">
           <h3>{{j.itemName}}</h3>
           <p><i primary class="fa fa-inr"></i>{{j.itemPrice}}</p>
         </button>

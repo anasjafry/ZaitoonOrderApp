@@ -19,10 +19,12 @@ console.log();
 })
 export class CartPage {
 
-  
-  info = JSON.parse(localStorage.getItem("myCart"));
+   flag:Boolean;
+   info:Array<any>;
+   price:number;
+
   constructor(public navCtrl: NavController,
-  public alertCtrl: AlertController,
+  public alertCtrl: AlertController
   ) {  } 
 
   doPrompt() {
@@ -53,16 +55,23 @@ export class CartPage {
     prompt.present();
   }
   
-  price() {
-    var info = JSON.parse(localStorage.getItem("myCart"));
-    var i = 0;
-    var sum=0;
-    while(i<info.length) {
-      sum += info[i].itemQuantity*info[i].itemPrice;  
-      i++; 
-    }
-  //this.price=sum;
+
+  renderCart(){
+    
+    this.info = JSON.parse(localStorage.getItem("myCart"));
+
+    //Find the sum and then assign
+    if(localStorage.getItem("myCart") === null || (JSON.parse(localStorage.getItem("myCart"))).length<1)
+    {this.flag=false;}
+    else{this.flag=true}
+    this.price = 1000;
   }
+
+
+  public ngOnInit(): any
+    {
+        this.renderCart();
+    }  
 
   addFunction(code) {
     var info = JSON.parse(localStorage.getItem("myCart"));
@@ -80,6 +89,8 @@ export class CartPage {
     localStorage.setItem("myCart", JSON.stringify(item));
     //document.getElementById("1001").innerHTML  = info.itemQuantity;
     console.log((JSON.parse(localStorage.getItem("myCart")))[0]);
+
+    this.renderCart();
   }
 
   minusFunction(code) {
@@ -109,6 +120,7 @@ export class CartPage {
              
     //document.getElementById("item_count_12").innerHTML  = "red";
     //console.log(info.length) ;
+    this.renderCart();
   }
 
 }

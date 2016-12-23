@@ -1,16 +1,12 @@
 import { Component } from '@angular/core';
 import { AlertController } from 'ionic-angular';
 import { NavController } from 'ionic-angular';
-//import * as globs from '../../globals';
 
-var items = [];
-items.push({"itemCode":1001,"itemName":"Paneer Butter Masala","itemQuantity": 4,"itemPrice":90});
-items.push({"itemCode":1002,"itemName":"Channa Butter Masala","itemQuantity": 1,"itemPrice":70});
-items.push({"itemCode":1003,"itemName":"Chicken Masala","itemQuantity": 1,"itemPrice":120});
-localStorage.setItem('myCart', JSON.stringify(items));
-//var info = JSON.parse(localStorage.getItem("itemsInfo"));
-//console.log(info[0]);
-console.log();
+//Creating an Empty Cart, if it doesn't exist already.
+if(!localStorage.getItem('myCart')){
+  var items = [];
+  localStorage.setItem('myCart', JSON.stringify(items));
+}
 
 
 @Component({
@@ -56,6 +52,10 @@ export class CartPage {
     });
     prompt.present();
   }
+
+  ionViewWillEnter() {
+      this.renderCart();
+  }
   
 
   renderCart(){
@@ -64,7 +64,9 @@ export class CartPage {
 
     //Find the sum and then assign
     if(localStorage.getItem("myCart") === null || (JSON.parse(localStorage.getItem("myCart"))).length<1)
-    {this.flag=false;}
+    {
+      this.flag=false;
+    }
     else{
       this.flag=true
       this.price = 0;
@@ -130,8 +132,6 @@ export class CartPage {
     localStorage.setItem("myCart", JSON.stringify(item));
     console.log((JSON.parse(localStorage.getItem("myCart")))[0]);
              
-    //document.getElementById("item_count_12").innerHTML  = "red";
-    //console.log(info.length) ;
     this.renderCart();
   }
 

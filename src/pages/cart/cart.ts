@@ -56,6 +56,10 @@ export class CartPage {
     });
     prompt.present();
   }
+
+  ionViewWillEnter() {
+      this.renderCart();
+  }
   
 
   renderCart(){

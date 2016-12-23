@@ -15,4 +15,10 @@ export class MenuService {
         var response = this.http.get(url).map(res => res.json());
         return response;
     }
+
+    getitems() {
+        var url = 'http://localhost/vega-web-app/online/getitems.php';
+        var response = this.http.get(url).map(res => res.json());
+        return response;
+    }
 }

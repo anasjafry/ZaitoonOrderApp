@@ -11,6 +11,7 @@ import { TrackPage } from '../pages/history/track/track';
 import { AddressPage } from '../pages/account/address/address';
 import { OffersPage } from '../pages/account/offers/offers';
 import { SubmenuPage } from '../pages/menu/submenu/submenu';
+import { SearchPage } from '../pages/menu/search/search';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SubmenuPage } from '../pages/menu/submenu/submenu';
     TrackPage,
     OffersPage,
     TabsPage,
-    SubmenuPage
+    SubmenuPage,
+    SearchPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -41,7 +43,8 @@ import { SubmenuPage } from '../pages/menu/submenu/submenu';
     TrackPage,
     OffersPage,
     TabsPage,
-    SubmenuPage
+    SubmenuPage,
+    SearchPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

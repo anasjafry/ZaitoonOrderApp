@@ -10,7 +10,7 @@ import { AccountPage } from '../account/account';
 })
 export class TabsPage {
 	
-	info:Array<any>;
+
   // this tells the tabs component which Pages
   // should be each tab's root Page
   tab1Root: any = MenuPage;
@@ -22,12 +22,4 @@ export class TabsPage {
 
   }
 
-  renderCart(){
-    
-    this.info = JSON.parse(localStorage.getItem("myCart"));
-    console.log("Clicked");
-    //Find the sum and then assign
-
-    //this.price = 1000;
-  }
 }

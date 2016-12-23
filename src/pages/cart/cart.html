@@ -54,7 +54,7 @@
       <p>Tax</p>
       </ion-col>
       <ion-col right text-right>
-      <p color="danger">+ <i primary class="fa fa-inr"></i>43.50</p>
+      <p color="danger">+ <i primary class="fa fa-inr"></i>{{tax}}</p>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -75,7 +75,7 @@
     </ion-row>
 	</ion-item>
 	<ion-item right text-right (click)="price()">
-		<p>TOTAL : <i primary class="fa fa-inr" ></i><p id="sum">{{ price }}</p><p>
+		<p>TOTAL : <i primary class="fa fa-inr" ></i>{{ total }}<p>
 	</ion-item>
 	<ion-item right text-right>
 		<button ion-button clear small (click)="doPrompt()">

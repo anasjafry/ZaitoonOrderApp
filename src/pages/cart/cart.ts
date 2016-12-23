@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AlertController } from 'ionic-angular';
 import { NavController } from 'ionic-angular';
-
+//import * as globs from '../../globals';
 
 var items = [];
 items.push({"itemCode":1001,"itemName":"Paneer Butter Masala","itemQuantity": 4,"itemPrice":90});
@@ -19,9 +19,11 @@ console.log();
 })
 export class CartPage {
 
-   flag:Boolean;
-   info:Array<any>;
-   price:number;
+    public flag:Boolean;
+    public info:Array<any>;
+    public price:number;
+    public tax:number;
+    public total:number;
 
   constructor(public navCtrl: NavController,
   public alertCtrl: AlertController
@@ -63,8 +65,18 @@ export class CartPage {
     //Find the sum and then assign
     if(localStorage.getItem("myCart") === null || (JSON.parse(localStorage.getItem("myCart"))).length<1)
     {this.flag=false;}
-    else{this.flag=true}
-    this.price = 1000;
+    else{
+      this.flag=true
+      this.price = 0;
+      var i = 0;
+      var info = JSON.parse(localStorage.getItem("myCart"));
+      while(i<info.length) {
+        this.price += info[i].itemQuantity*info[i].itemPrice;
+        i++; 
+      }
+      this.tax=Math.round(0.07*this.price*100)/100;
+      this.total=this.tax+this.price;
+    } 
   }
 
 

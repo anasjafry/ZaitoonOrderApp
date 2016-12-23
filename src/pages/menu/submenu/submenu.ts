@@ -1,18 +1,23 @@
 import { Component } from '@angular/core';
 import { NavController,NavParams } from 'ionic-angular';
+import { CartPage } from '../../cart/cart';
+//import * as globs from 'globals';
 
 @Component({
   selector: 'page-submenu',
   templateUrl: 'submenu.html'
 })
 export class SubmenuPage {
-   x: Array<any>
+
+	x:Array<any>;
 
   constructor(public navCtrl: NavController,
     public params: NavParams
     ) {
     this.x = this.params.get('item');
   }
+
+  
 
   addToCart(code,name,price,variety){
   	if(localStorage.getItem("myCart") === null){
@@ -56,8 +61,9 @@ export class SubmenuPage {
                 localStorage.setItem('myCart', JSON.stringify(oldItems));
                 console.log((JSON.parse(localStorage.getItem("myCart")))[3]);
                 
-            }  	
+            } 
   }
+
 
 
 }

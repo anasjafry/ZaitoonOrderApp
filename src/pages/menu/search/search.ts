@@ -9,7 +9,7 @@ import { MenuService } from '../../services/menurender';
 })
 export class SearchPage {
   //itemslist: Array<any>;
-  items;
+  items; masterList;
   constructor(private menuService: MenuService) { 
     this.initializeItems(); 
   }
@@ -17,7 +17,8 @@ export class SearchPage {
   menu() {
             this.menuService.getitems().subscribe(
                 data => {
-                    this.items = data; 
+                    this.items = data;
+                    this.masterList = data; 
                     console.log(data);
                 },
                 err => {
@@ -33,9 +34,11 @@ export class SearchPage {
     }
 
   initializeItems() {
-    this.items;
+    this.items = this.masterList;
   }
   getItems(ev: any) {
+    console.log(ev.target.value);
+    console.log(this.items);
     // Reset items back to all of the items
     this.initializeItems();
 

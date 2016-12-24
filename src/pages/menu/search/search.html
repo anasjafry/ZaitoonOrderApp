@@ -9,8 +9,11 @@
 <ion-content>
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
     <ion-list>
-      <ion-item *ngFor="let item of items">
-        {{ item }}
-      </ion-item>
+      <ion-item-sliding *ngFor="let item of items">
+        <button ion-item (click)="addToCart(item.itemCode,item.itemName,item.itemPrice,item.itemVariety)">
+          <h3>{{item.itemName}}</h3>
+          <p><i primary class="fa fa-inr"></i>{{item.itemPrice}}</p>
+        </button>
+      </ion-item-sliding>
     </ion-list>
 </ion-content>

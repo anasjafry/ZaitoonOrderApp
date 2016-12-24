@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AlertController } from 'ionic-angular';
 import { NavController } from 'ionic-angular';
+import { MenuService } from '../services/menurender';
 
 //Creating an Empty Cart, if it doesn't exist already.
 if(!localStorage.getItem('myCart')){
@@ -11,10 +12,11 @@ if(!localStorage.getItem('myCart')){
 
 @Component({
   selector: 'page-cart',
-  templateUrl: 'cart.html'
+  templateUrl: 'cart.html',
+  providers: [MenuService]
 })
 export class CartPage {
-
+    postData:string;
     public flag:Boolean;
     public info:Array<any>;
     public price:number;
@@ -22,7 +24,8 @@ export class CartPage {
     public total:number;
 
   constructor(public navCtrl: NavController,
-  public alertCtrl: AlertController
+  public alertCtrl: AlertController,
+  private menuService: MenuService
   ) {  } 
 
   doPrompt() {
@@ -133,6 +136,14 @@ export class CartPage {
     console.log((JSON.parse(localStorage.getItem("myCart")))[0]);
              
     this.renderCart();
+  }
+
+  placeorder() {
+    this.menuService.checkout().subscribe(//call the post
+    data => this.postData = JSON.stringify(data), // put the data returned from the server in our variable
+    error => console.log("Error HTTP Post Service"), // in case of failure show this message
+    () => console.log("Job Done Post !")//run this code in all cases
+    );
   }
 
 }

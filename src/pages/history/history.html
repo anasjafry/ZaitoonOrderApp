@@ -46,42 +46,17 @@
       </ion-list>
 
     <ion-list *ngSwitchCase="'past'">
-      <ion-item>
+      <ion-item *ngFor="let item of historyData">
       <ion-row>
       <ion-col>
-      <h2>Marty McFly</h2>
+      <h2><strong>{{item.orderID}}</strong></h2>
       </ion-col>
       <ion-col right text-right>
-      <h2><i primary class="fa fa-inr"></i>250</h2>
+      <h2><i primary class="fa fa-inr"></i> {{item.cart.cartTotal}}</h2>
       </ion-col>
       </ion-row>
-      <p>November 5, 1955</p>
-      <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
-      <ion-row>
-        <ion-col>
-         <button ion-button icon-left clear small (click)="orderdetailsPage()">
-          <div>View Details</div>
-          </button>
-        </ion-col>
-        <ion-col>
-          <button ion-button icon-left clear small>
-          <div>Repeat Order</div>
-          </button>
-        </ion-col>
-      </ion-row>
-      </ion-item>
-      
-      <ion-item>
-      <ion-row>
-      <ion-col>
-      <h2>Marty McFly</h2>
-      </ion-col>
-      <ion-col right text-right>
-      <h2><i primary class="fa fa-inr"></i>250</h2>
-      </ion-col>
-      </ion-row>
-      <p>November 5, 1955</p>
-      <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+      <p>{{item.date}}</p>
+      <p><span *ngFor="let x of item.cart.items">{{x.itemName}} ({{x.itemQuantity}}),</span></p>
       <ion-row>
         <ion-col>
          <button ion-button icon-left clear small (click)="orderdetailsPage()">

@@ -9,7 +9,7 @@
 <ion-content padding>
 <ion-list>
 	<ion-item>
-	<ion-row>
+	  <ion-row>
       <ion-col>
       <ion-note>ORDER NO</ion-note>
       </ion-col>
@@ -19,18 +19,18 @@
     </ion-row>
     <ion-row>
       <ion-col>
-      <p><strong>332456</strong></p>
+      <p><strong>{{x.orderID}}</strong></p>
       </ion-col>
       <ion-col right text-right>
-      <p><strong>11th Dec, 2016</strong></p>
+      <p><strong>{{x.date}}</strong></p>
       </ion-col>
     </ion-row>
-    <ion-row>
+    <ion-row *ngFor="let i of x.cart.items">
       <ion-col>
-      <p>Butter Chicken</p>
+      <p>{{i.itemName}} ({{i.itemQuantity}})</p>
       </ion-col>
       <ion-col right text-right>
-      <p><i primary class="fa fa-inr"></i>250</p>
+      <p><i primary class="fa fa-inr"></i>{{i.itemPrice}}</p>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -38,7 +38,7 @@
       <p>Tax</p>
       </ion-col>
       <ion-col right text-right>
-      <p color="danger">+ <i primary class="fa fa-inr"></i>43.50</p>
+      <p color="danger">+ <i primary class="fa fa-inr"></i>3.5</p>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -59,7 +59,7 @@
     </ion-row>
 	</ion-item>
 	<ion-item right text-right>
-		<p>TOTAL : <i primary class="fa fa-inr"></i>293.50<p>
+		<p>TOTAL : <i primary class="fa fa-inr"></i>{{x.cart.cartTotal}}<p>
 	</ion-item>
 </ion-list>
 <ion-card>

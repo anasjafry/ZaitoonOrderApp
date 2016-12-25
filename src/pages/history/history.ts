@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { OrderdetailsPage } from './orderdetails/orderdetails';
-import { NavController } from 'ionic-angular';
+import { NavController,NavParams } from 'ionic-angular';
 import { TrackPage } from './track/track';
 import { MenuService } from '../services/menurender';
 
@@ -11,15 +11,15 @@ import { MenuService } from '../services/menurender';
 })
 export class HistoryPage {
   historyData: Array<any>;
-	orders: string = "live";
+  orders: string = "live";
   constructor(public navCtrl: NavController,
-    private menuService: MenuService) {
+    private menuService: MenuService,
+    params: NavParams) {  }
 
-  }
-
-  orderdetailsPage() {
-    console.log("Order Details Page Called");
-    this.navCtrl.push(OrderdetailsPage);
+  orderdetailsPage(item) {
+    var x=JSON.stringify(item);
+    console.log(item);
+    this.navCtrl.push(OrderdetailsPage, { item:item });
   }
 
   trackPage() {
